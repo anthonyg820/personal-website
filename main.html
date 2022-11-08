@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="core.css">
+    <script src="core.js"></script>
+    <script src="smoothscroll.min.js"></script>
+    <title>Anthony D. Gonzalez Portfolio</title>
+
+</head>
+
+<body onload="hideSplash()">
+
+    <div id="logo" onclick="scrollToSection(0)"> ADG </div>
+
+    <div id="menuButton" onclick="showOrHideNav()">  
+    
+        <div class="menuButtonLine"> </div>
+        <div class="menuButtonLine"> </div>
+        <div class="menuButtonLine"> </div>
+    
+    </div>
+
+    <div id="darkModeButton" onclick="setDarkOrLightMode()">  
+
+        <section href="#">
+
+            <div> <img src="assets/bulb_on.svg" alt=""> </div>
+            <p> Light mode </p>
+
+        </section>
+
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <!-- <li class="activeTab">  
+
+                <section onclick="scrollToSection(0)">
+
+                    <div> <img src="assets/home.svg" alt=""> </div>
+                    <p> Home </p>
+
+                </a>
+
+            </li> -->
+
+            <li>  
+
+                <section onclick="scrollToSection(1)">
+
+                    <div> <img src="assets/skills.svg" alt=""> </div>
+                    <p> Skills </p>
+
+                </a>
+
+            </li>
+
+            <li>  
+
+                <section onclick="scrollToSection(2)">
+
+                    <div> <img src="assets/experience.svg" alt=""> </div>
+                    <p> Experience </p>
+
+                </a>
+
+            </li>
+
+            <li>  
+
+                <section onclick="scrollToSection(3)">
+
+                    <div> <img src="assets/education.svg" alt=""> </div>
+                    <p> Education </p>
+
+                </a>
+
+            </li>
+
+            <li>  
+
+                <section onclick="scrollToSection(4)">
+
+                    <div> <img src="assets/code.svg" alt=""> </div>
+                    <p> Projects </p>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <div id="siteContent" onscroll="setActiveNavTab(), setMenuButtonBackground(), animateObjects()">
+
+        <script> 
+
+            let touchStartY = 0;
+            let touchEndY = 0;
+            
+            document.getElementById("siteContent").addEventListener("wheel", advanceToNextSlide); 
+
+            document.getElementById("siteContent").addEventListener("touchstart", (event) => {
+                touchStartY = event.changedTouches[0].screenY
+            }); 
+            
+            document.getElementById("siteContent").addEventListener("touchend", (event) => {
+                touchEndY = event.changedTouches[0].screenY
+                advanceToNextSlide(event, touchStartY, touchEndY);
+            }); 
+
+        </script>
+
+        <section id="splash" class="slide">
+
+            <div id="splashCircleOuter" class="splashCircle"></div>
+
+            <div id="splashCircleInner" class="splashCircle"> <img src="assets/avatar.svg" alt=""> </div>
+
+        </section>
+
+        <section id="home" class="slide">
+
+            <div id="leftOfHome">
+
+                <div class="homeHalfContent">
+
+                    <div id="homeProfilePicOuter"> <div id="homeProfilePicMiddle"> <div id="homeProfilePicInner"> <img src="assets/avatar.svg" alt=""> </div> </div> </div>
+
+                    <a href="assets/Anthony Resume V9.pdf" target="_blank"> DOWNLOAD RESUME </a>
+                    
+                </div>
+                
+            </div>
+
+            <div id="rightOfHome">
+
+                <div class="homeHalfContent">
+
+                    <div class="homeAccent1"></div>
+                    <div class="homeAccent2"></div>
+
+                    <h1> Anthony D. Gonzalez </h1>
+
+                    <h6> //ABOUT ME </h6>
+    
+                    <p> Hello world! I am a software engineer with a focus on devops and SRE principles. </p>
+
+                    <div id="homeSocials">
+
+                        <a href="https://www.github.com/anthonyg820" target="_blank" class="socialButtonContainer"> <img src="assets/github.svg" alt=""> </a>
+                        <a href="https://www.linkedin.com/in/anthony-gonzalez-341279173/" target="_blank" class="socialButtonContainer"> <img src="assets/linkedin.svg" alt=""> </a>
+                        <a href="https://www.linkedin.com/in/anthony-gonzalez-341279173/" target="_blank" class="socialButtonContainer"> <img src="assets/mail.svg" alt=""> </a>
+
+                    </div>
+
+                    <div class="homeAccent2"></div>
+                    <div class="homeAccent1"></div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <section id="skills" class="slide"> 
+
+            <div class="slideContent carousel"> 
+
+                <h1> SKILLS </h1>
+
+                <div class="carouselWrapper">
+
+                    <div class="carouselArrowContainer leftArrow">
+
+                        <img src="assets/arrow-left.svg" onclick="previousCarouselSlide('skills')" alt="">
+                        
+                    </div>
+    
+                    <div class="carouselContent">
+    
+                        <ul class="carouselList">
+
+                            <li class="carouselItemWrapper"> 
+
+                                <div class="skillBlockHolder carouselItem">
+
+                                    <div class="skillBlock">
+            
+                                        <header>
+                
+                                            <div> <img src="assets/code.svg" alt=""> </div>
+                
+                                            <h5> LANGUAGES </h5>
+                
+                                        </header>
+                
+                                        <ul>
+                    
+                                            <li> <img src="assets/check_purple.svg" alt=""> HTML </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> CSS </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> JavaScript </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> Java </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> PHP </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> SQL </li>
+                
+                                        </ul>
+                
+                                    </div>
+            
+                                </div>
+
+                            </li>
+
+                            <li class="carouselItemWrapper"> 
+
+                                <div class="skillBlockHolder carouselItem">
+
+                                    <div class="skillBlock">
+            
+                                        <header>
+                
+                                            <div> <img src="assets/sre.svg" alt=""> </div>
+                
+                                            <h5> FRAMEWORKS </h5>
+                
+                                        </header>
+                
+                                        <ul>
+                    
+                                            <li> <img src="assets/check_purple.svg" alt=""> ReactJS </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> AngularJS </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> NodeJS </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> Java Spring </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> WordPress </li>
+                
+                                        </ul>
+                
+                                    </div>
+            
+                                </div>
+
+                            </li>
+
+                            <li class="carouselItemWrapper"> 
+
+                                <div class="skillBlockHolder carouselItem">
+
+                                    <div class="skillBlock">
+            
+                                        <header>
+                
+                                            <div> <img src="assets/sysadmin.svg" alt=""> </div>
+                
+                                            <h5> SRE </h5>
+                
+                                        </header>
+                
+                                        <ul>
+                    
+                                            <li> <img src="assets/check_purple.svg" alt=""> Ansible </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> Terraform </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> APM Tools </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> Linux / AIX / Windows </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> Powershell / CMD </li>
+                                            <li> <img src="assets/check_purple.svg" alt=""> Bash shell </li>
+                
+                                        </ul>
+                
+                                    </div>
+            
+                                </div>
+
+                            </li>
+
+                        </ul>
+    
+                    </div>
+    
+                    <div class="carouselArrowContainer rightArrow">
+    
+                        <img src="assets/arrow-right.svg" onclick="nextCarouselSlide('skills')" alt="">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="experience" class="slide"> 
+
+            <div class="slideContent carousel"> 
+
+                <h1> EXPERIENCE </h1>
+
+                <div class="carouselWrapper">
+
+                    <div class="carouselArrowContainer leftArrow">
+
+                        <img src="assets/arrow-left.svg" onclick="previousCarouselSlide('experience')" alt="">
+                        
+                    </div>
+    
+                    <div class="carouselContent">
+    
+                        <ul class="carouselList">
+
+                            <li class="carouselItemWrapper"> 
+
+                                <div class="experienceWidget carouselItem">
+
+                                    <ul class="experienceTimeList">
+
+                                        <li class="experienceTimeBubble"> 
+                                        
+                                            <div class="experienceTimeBubbleYear"> 2022 </div> 
+                                            <div class="experienceTimeBubbleMonth"> CURRENT </div> 
+                                            
+                                        </li>
+
+                                        <li class="timeBubbleLink"></li>
+
+                                        <li class="experienceTimeBubble"> 
+                                        
+                                            <div class="experienceTimeBubbleYear"> 2021 </div> 
+                                            <div class="experienceTimeBubbleMonth"> SEPTEMBER </div> 
+                                            
+                                        </li>
+
+                                    </ul>
+
+                                    <img class="experienceCompanyLogo" src="./assets/ukg.svg"/>
+
+                                    <h5> Ultimate Kronos Group </h5>
+
+                                    <h6> SRE </h6>
+
+                                    <ul class="experienceResponsibilities">
+        
+                                        <li> Creating automated CI / CD pipelines </li>
+                                        <li> Deploying applications to the cloud (GCP) </li>
+                                        <li> Implementing monitoring / alerting solutions </li>
+            
+                                    </ul>
+
+                                </div>
+
+                            </li>
+
+                            <li class="carouselItemWrapper"> 
+
+                                <div class="experienceWidget carouselItem">
+
+                                    <ul class="experienceTimeList">
+
+                                        <li class="experienceTimeBubble"> 
+                                        
+                                            <div class="experienceTimeBubbleYear"> 2021 </div> 
+                                            <div class="experienceTimeBubbleMonth"> SEPTEMBER </div> 
+                                            
+                                        </li>
+
+                                        <li class="timeBubbleLink"></li>
+
+                                        <li class="experienceTimeBubble"> 
+                                        
+                                            <div class="experienceTimeBubbleYear"> 2019 </div> 
+                                            <div class="experienceTimeBubbleMonth"> JANUARY </div> 
+                                            
+                                        </li>
+
+                                    </ul>
+
+                                    <img class="experienceCompanyLogo" src="./assets/rccl.jpg"/>
+
+                                    <h5> Royal Caribbean Cruises </h5>
+
+                                    <h6> SRE </h6>
+
+                                    <ul class="experienceResponsibilities">
+        
+                                        <li> Deployed APM solutions across their fleet of 60+ ships </li>
+                                        <li> Reduce toil using automation tools such as Ansible </li>
+                                        <li> Instrumented products into AppDynamics </li>
+                                        <li> Assisted teams in defining SLIs, SLOs, and SLAs </li>
+
+                                    </ul>
+
+                                </div>
+
+                            </li>
+
+                            <li class="carouselItemWrapper"> 
+
+                                <div class="experienceWidget carouselItem">
+
+                                    <ul class="experienceTimeList">
+
+                                        <li class="experienceTimeBubble"> 
+                                        
+                                            <div class="experienceTimeBubbleYear"> 2019 </div> 
+                                            <div class="experienceTimeBubbleMonth"> JANUARY </div> 
+                                            
+                                        </li>
+
+                                        <li class="timeBubbleLink"></li>
+
+                                        <li class="experienceTimeBubble"> 
+                                        
+                                            <div class="experienceTimeBubbleYear"> 2016 </div> 
+                                            <div class="experienceTimeBubbleMonth"> JANUARY </div> 
+                                            
+                                        </li>
+
+                                    </ul>
+
+                                    <img class="experienceCompanyLogo" src="./assets/person.svg"/>
+
+                                    <h5> Freelancer </h5>
+
+                                    <h6> Freelance Web Developer </h6>
+
+                                    <ul class="experienceResponsibilities">
+        
+                                        <li> Designed and created websites for clients </li>
+                                        <li> Fixed / improved existing websites </li>
+                                        <li> Performed / enhanced SEO </li>
+            
+                                    </ul>
+
+                                </div>
+
+                            </li>
+
+                        </ul>
+    
+                    </div>
+    
+                    <div class="carouselArrowContainer rightArrow">
+    
+                        <img src="assets/arrow-right.svg" onclick="nextCarouselSlide('experience')" alt="">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="education" class="slide"> 
+
+            <div class="slideContent carousel"> 
+
+                <h1> EDUCATION </h1>
+
+                <div class="carouselWrapper">
+
+                    <div class="carouselArrowContainer leftArrow">
+
+                        <img src="assets/arrow-left_white.svg" onclick="previousCarouselSlide('education')" alt="">
+                        
+                    </div>
+    
+                    <div class="carouselContent">
+    
+                        <ul class="carouselList">
+
+                            <li class="carouselItemWrapper"> 
+
+                                <div id="leftOfEducation" class="carouselItem">
+
+                                    <div id="uniOuter">
+            
+                                        <div id="uniInner"> <img src="assets/education.svg" alt=""> </div>
+            
+                                    </div>
+            
+                                    <h5> B.S Computer Engineering </h5>
+            
+                                    <p> Florida International University </p>
+            
+                                </div>
+
+                            </li>
+
+                            <li class="carouselItemWrapper"> 
+
+                                <div id="rightOfEducation" class="carouselItem">
+
+                                    <h5> Certifications </h5>
+            
+                                    <ul id="certs">
+            
+                                        <li> <img src="assets/gcp.svg" alt=""> GCP Professional Cloud DevOps Engineer  </li>
+                                        <li> <img src="assets/jenkins.svg" alt=""> Certified Jenkins Engineer </li>
+                                        <li> <img src="assets/networkplus.svg" alt=""> CompTIA Network + </li>
+                                        <li> <img src="assets/appdynamics.svg" alt=""> AppDynamics Associate Performance Analyst </li>
+            
+                                    </ul>
+            
+                                </div>
+
+                            </li>
+
+                        </ul>
+    
+                    </div>
+    
+                    <div class="carouselArrowContainer rightArrow">
+    
+                        <img src="assets/arrow-right_white.svg" onclick="nextCarouselSlide('education')" alt="">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="projects" class="slide"> 
+
+            <div class="slideContent carousel alwaysActiveCarousel"> 
+
+                <h1> PROJECTS </h1>
+
+                <div class="carouselWrapper">
+
+                    <div class="carouselArrowContainer leftArrow">
+
+                        <img src="assets/arrow-left.svg" onclick="previousCarouselSlide('projects')" alt="">
+                        
+                    </div>
+    
+                    <div class="carouselContent">
+    
+                        <ul class="carouselList">
+
+                            <li id="devopshangout" class="carouselItemWrapper"> 
+
+                                <div class="project carouselItem">
+
+                                    <div class="projectImg"></div>
+
+                                    <div class="projectDetails">
+
+                                        <h4> Devops Hangout </h4>
+
+                                        <ul class="projectTechList">
+    
+                                            <li> ReactJS </li>
+                                            <li> NodeJS </li>
+                                            <li> PostgresSQL </li>
+    
+                                        </ul>
+            
+                                        <p> A platform used to teach devops ideologies. </p>
+            
+                                        <div class="projectButtonContainer">  
+            
+                                            <a href="#"> <img src="assets/github.svg" alt=""> </a>
+                                            <a href="#"> View </a>
+            
+                                        </div>
+
+                                    </div>
+            
+                                </div>
+
+                            </li>
+                            
+                            <li id="consilium" class="carouselItemWrapper"> 
+
+                                <div class="project carouselItem">
+
+                                    <div class="projectImg"></div>
+
+                                    <div class="projectDetails">
+
+                                        <h4> Consilium </h4>
+
+                                        <ul class="projectTechList">
+    
+                                            <li> ReactJS </li>
+                                            <li> NodeJS </li>
+                                            <li> PostgresSQL </li>
+    
+                                        </ul>
+            
+                                        <p> A web-based agile planner. Create and manage tasks in an agile environment. </p>
+            
+                                        <div class="projectButtonContainer">  
+            
+                                            <a href="#"> <img src="assets/github.svg" alt=""> </a>
+                                            <a href="#"> View </a>
+            
+                                        </div>
+
+                                    </div>
+            
+                                </div>
+
+                            </li>
+                            
+                            <li id="jmessenger" class="carouselItemWrapper"> 
+
+                                <div class="project carouselItem">
+
+                                    <div class="projectImg"></div>
+
+                                    <div class="projectDetails">
+
+                                        <h4> JMessenger </h4>
+
+                                        <ul class="projectTechList">
+    
+                                            <li> Java </li>
+    
+                                        </ul>
+            
+                                        <p> A Java-based intranet chat tool. </p>
+            
+                                        <div class="projectButtonContainer">  
+            
+                                            <a href="#"> <img src="assets/github.svg" alt=""> </a>
+                                            <a href="#"> View </a>
+            
+                                        </div>
+
+                                    </div>
+            
+                                </div>
+
+                            </li>
+
+                        </ul>
+    
+                    </div>
+    
+                    <div class="carouselArrowContainer rightArrow">
+    
+                        <img src="assets/arrow-right.svg" onclick="nextCarouselSlide('projects')" alt="">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
